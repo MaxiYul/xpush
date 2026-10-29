@@ -1,0 +1,32 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'io.xpusb.maker'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId 'io.xpusb.maker'
+        minSdk 21          // Android 5.0+, в том числе Android 8.1 x86
+        targetSdk 27       // Android 8.1: меньше ограничений на старых системах
+        versionCode 1
+        versionName '1.0'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    lint {
+        abortOnError false
+        checkReleaseBuilds false
+    }
+}
